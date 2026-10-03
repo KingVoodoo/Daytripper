@@ -1,0 +1,351 @@
+/* Tabler workspace layout for Daytripper */
+
+html:has(.shell.is-module-popout),
+html:has(.shell.is-module-popout) body,
+html:has(.shell.is-module-popout) #app {
+  height: 100%;
+  max-height: 100%;
+  overflow: hidden;
+}
+
+.shell.is-module-popout {
+  height: 100vh;
+  max-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  min-height: 0;
+  box-sizing: border-box;
+}
+
+.shell.is-module-popout > header {
+  flex: 0 0 auto;
+}
+
+.shell.is-module-popout > .notice {
+  flex: 0 0 auto;
+}
+
+.shell.is-module-popout > .notice:empty {
+  display: none;
+}
+
+.shell.is-module-popout > main {
+  flex: 1 1 auto;
+  min-height: 0;
+  min-width: 0;
+  overflow: hidden;
+  height: auto !important;
+  display: flex;
+  flex-direction: column;
+}
+
+.daytripper-shell main {
+  padding: 0 !important;
+  overflow: hidden !important;
+  display: flex !important;
+  flex-direction: column !important;
+  min-height: 0;
+}
+
+.daytripper-shell main.daytripper-tabler-shell,
+.daytripper-shell main > .daytripper-tabler-shell {
+  flex: 1 1 auto;
+  min-height: 0;
+  width: 100%;
+}
+
+.shell.is-module-popout > main.daytripper-tabler-shell {
+  height: auto !important;
+}
+
+.daytripper-popout-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+}
+
+.daytripper-tabler-shell {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  min-height: 0;
+}
+
+.shell.is-module-popout > .daytripper-tabler-shell {
+  height: auto;
+  flex: 1 1 auto;
+}
+
+.daytripper-tabler-shell.daytripper-container,
+.daytripper-tabler-shell > .daytripper-container {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  min-height: 0;
+  width: 100%;
+  flex: 1 1 auto;
+  background: transparent;
+  color: var(--wok-text-primary);
+  overflow: hidden;
+}
+
+.daytripper-tabler-shell .daytripper-page-toolbar,
+.daytripper-tabler-shell .wh-header {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--wok-space-2, 8px);
+  flex-shrink: 0;
+  padding: var(--wok-space-3, 12px) var(--wok-space-3, 12px) var(--wok-space-2, 8px);
+  background: transparent;
+  border: none;
+}
+
+.daytripper-tabler-shell .daytripper-toolbar-left,
+.daytripper-tabler-shell .wh-header-left {
+  display: flex;
+  align-items: center;
+  gap: var(--wok-space-2, 8px);
+  min-width: 0;
+  flex-wrap: wrap;
+}
+
+.daytripper-tabler-shell .daytripper-page-title-icon {
+  width: 22px;
+  height: 22px;
+  object-fit: contain;
+  flex-shrink: 0;
+}
+
+.daytripper-tabler-shell .daytripper-toolbar-label {
+  font-size: calc(0.8125rem * var(--font-scale, 1));
+  font-weight: 600;
+  color: var(--wok-text-secondary);
+  letter-spacing: 0.02em;
+}
+
+.daytripper-tabler-shell .daytripper-toolbar-right,
+.daytripper-tabler-shell .wh-header-btns {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: flex-end;
+  gap: var(--wok-space-2, 8px);
+  overflow: visible;
+}
+
+.daytripper-tabler-shell .wh-header-btns .btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  white-space: nowrap;
+}
+
+.daytripper-tabler-shell .wh-tabs-row {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--wok-space-2, 8px);
+  padding: 0 var(--wok-space-3, 12px) var(--wok-space-2, 8px);
+  flex-shrink: 0;
+  background: transparent;
+  border: none;
+}
+
+.daytripper-tabler-shell .wh-tabs-list.wok-subnav {
+  flex: 1 1 auto;
+  min-width: 0;
+  flex-wrap: wrap;
+  gap: var(--wok-space-2, 8px);
+  padding: 0;
+  background: transparent;
+}
+
+.daytripper-tabler-shell .wh-tab-btn.wok-subnav-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  position: relative;
+}
+
+.daytripper-tabler-shell .wh-tab-btn.wok-subnav-btn:focus-visible {
+  outline: 2px solid var(--wok-accent);
+  outline-offset: 2px;
+}
+
+.daytripper-tabler-shell .wh-tab-close {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 1.1rem;
+  height: 1.1rem;
+  padding: 0;
+  margin-left: 0.15rem;
+  border: none;
+  border-radius: var(--wok-radius-sm, 3px);
+  background: transparent;
+  color: var(--wok-text-secondary);
+  cursor: pointer;
+}
+
+.daytripper-tabler-shell .wh-tab-close:hover {
+  color: var(--wok-danger);
+  background: var(--wok-danger-subtle);
+}
+
+.daytripper-tabler-shell .wh-tab-actions {
+  display: flex;
+  align-items: center;
+  gap: var(--wok-space-2, 8px);
+  flex-shrink: 0;
+}
+
+.daytripper-tabler-shell .wh-cloud-sync-pill {
+  display: inline-flex;
+  align-items: center;
+  padding: 0.2rem 0.55rem;
+  border-radius: var(--wok-radius-sm, 3px);
+  font-size: calc(0.7rem * var(--font-scale, 1));
+  font-weight: 600;
+  border: 1px solid var(--wok-border-subtle);
+  background: var(--wok-glass-dialog);
+  color: var(--wok-text-secondary);
+  cursor: pointer;
+}
+
+.daytripper-tabler-shell .wh-cloud-sync-pill.is-synced {
+  border-color: var(--wok-success);
+  color: var(--wok-success);
+  background: var(--wok-success-subtle);
+}
+
+.daytripper-tabler-shell .wh-cloud-sync-pill.is-syncing {
+  border-color: var(--wok-warning);
+  color: var(--wok-warning);
+  background: var(--wok-warning-subtle);
+}
+
+.daytripper-tabler-shell .wh-body {
+  flex: 1 1 auto;
+  min-height: 0;
+  display: flex;
+  overflow: hidden;
+  gap: 0;
+  padding: 0 var(--wok-space-3, 12px) var(--wok-space-3, 12px);
+}
+
+.daytripper-tabler-shell .wh-stage {
+  flex: 1 1 auto;
+  min-width: 0;
+  min-height: 0;
+  overflow: auto;
+  background: var(--wok-glass-surface, var(--wok-bg-surface));
+  border: 1px solid var(--wok-glass-edge, var(--wok-border-subtle));
+  border-radius: var(--wok-radius-md, 6px);
+  box-shadow: var(--wok-glass-shadow, none);
+  -webkit-backdrop-filter: var(--wok-glass-blur);
+  backdrop-filter: var(--wok-glass-blur);
+}
+
+.daytripper-tabler-shell .wh-inspector {
+  flex-shrink: 0;
+  min-height: 0;
+  overflow: auto;
+  margin-left: var(--wok-space-2, 8px);
+  background: var(--wok-glass-surface, var(--wok-bg-elevated));
+  border: 1px solid var(--wok-glass-edge, var(--wok-border-subtle));
+  border-radius: var(--wok-radius-md, 6px);
+  box-shadow: var(--wok-glass-shadow, none);
+  -webkit-backdrop-filter: var(--wok-glass-blur);
+  backdrop-filter: var(--wok-glass-blur);
+}
+
+/* Modal / legacy map-btn → token chrome inside shell */
+.daytripper-tabler-shell .map-btn,
+.daytripper-tabler-shell .wh-btn-toggle,
+.daytripper-tabler-shell .wh-sig-btn,
+.daytripper-tabler-shell .wh-node-action-btn {
+  background: var(--wok-glass-dialog);
+  border: 1px solid var(--wok-glass-edge);
+  color: var(--wok-text-primary);
+  border-radius: var(--wok-radius-sm, 3px);
+  box-shadow: none;
+}
+
+.daytripper-tabler-shell .map-btn:hover,
+.daytripper-tabler-shell .wh-btn-toggle:hover,
+.daytripper-tabler-shell .wh-sig-btn:hover,
+.daytripper-tabler-shell .wh-node-action-btn:hover {
+  background: var(--wok-bg-hover);
+  border-color: var(--wok-accent);
+  color: var(--wok-text-primary);
+  box-shadow: none;
+}
+
+.daytripper-tabler-shell .map-btn-secondary {
+  background: transparent;
+  color: var(--wok-text-secondary);
+}
+
+.daytripper-tabler-shell .map-btn-danger {
+  border-color: var(--wok-danger);
+  color: var(--wok-danger);
+  background: var(--wok-danger-subtle);
+}
+
+.daytripper-tabler-shell .map-btn:focus-visible,
+.daytripper-tabler-shell .btn:focus-visible,
+.daytripper-tabler-shell .wh-btn-toggle:focus-visible {
+  outline: 2px solid var(--wok-accent);
+  outline-offset: 2px;
+}
+
+/* Status accents use status tokens only */
+.daytripper-tabler-shell .wh-canvas-node.wh-status-camped,
+.daytripper-tabler-shell .wh-tree-node.wh-status-camped {
+  border-color: var(--wok-danger) !important;
+  box-shadow: none !important;
+  animation: none;
+}
+
+.daytripper-tabler-shell .wh-canvas-node.wh-status-traffic,
+.daytripper-tabler-shell .wh-tree-node.wh-status-traffic {
+  border-color: var(--wok-warning) !important;
+  box-shadow: none !important;
+}
+
+.daytripper-tabler-shell .wh-canvas-node.wh-status-eol_crit,
+.daytripper-tabler-shell .wh-canvas-node.wh-status-eolcrit,
+.daytripper-tabler-shell .wh-tree-node.wh-status-eol_crit,
+.daytripper-tabler-shell .wh-tree-node.wh-status-eolcrit {
+  border-color: var(--wok-warning) !important;
+  box-shadow: none !important;
+}
+
+.daytripper-tabler-shell .wh-canvas-node.wh-status-hole_control,
+.daytripper-tabler-shell .wh-canvas-node.wh-status-holecontrol,
+.daytripper-tabler-shell .wh-tree-node.wh-status-hole_control,
+.daytripper-tabler-shell .wh-tree-node.wh-status-holecontrol {
+  border-color: var(--wok-success) !important;
+  box-shadow: none !important;
+}
+
+.daytripper-tabler-shell .wh-guide-tab-btn {
+  box-shadow: none;
+}
+
+.wok-module-host[data-module='daytripper'] {
+  overflow: hidden;
+}
+
+.wok-module-host[data-module='daytripper'] .daytripper-tabler-shell,
+.wok-module-host[data-module='daytripper'] .daytripper-container,
+.wok-module-host[data-module='daytripper'] .daytripper-shell,
+.wok-module-host[data-module='daytripper'] .wok-legacy-host,
+.wok-module-host[data-module='daytripper'] .wok-legacy-mount {
+  height: 100%;
+  min-height: 0;
+}

@@ -1,0 +1,1 @@
+{"identifier":"main","description":"Local Daytripper windows","windows":["main","mapping-overlay"],"permissions":["core:default","core:window:allow-set-size","core:window:allow-set-always-on-top","core:window:allow-close"]}

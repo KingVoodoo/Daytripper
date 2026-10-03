@@ -1,0 +1,12 @@
+.wh-mapping-overlay-shell .wh-k162-overlay-dialog {
+  padding: 12px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  box-sizing: border-box;
+  max-height: 480px;
+  overflow-y: auto;
+}
+.wh-k162-overlay-dialog label { display: flex; flex-direction: column; gap: 4px; }
+.wh-k162-overlay-dialog :is(h3, p) { margin: 0; }
+.wh-k162-overlay-dialog :is(input, select) { width: 100%; box-sizing: border-box; }

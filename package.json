@@ -1,0 +1,35 @@
+{
+  "name": "daytripper",
+  "version": "0.2.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "vite --host 127.0.0.1",
+    "build": "npm run build:ui && tsc --noEmit && vite build",
+    "desktop": "tauri dev",
+    "desktop:build": "tauri build",
+    "test": "node --test tests/*.test.mjs",
+    "build:ui": "node scripts/build-arwes.mjs"
+  },
+  "dependencies": {
+    "@arwes/animated": "1.0.0-next.25020502",
+    "@arwes/frames": "1.0.0-next.25020502",
+    "@fontsource/orbitron": "5.3.0",
+    "@fontsource/rajdhani": "5.3.0",
+    "@fontsource/share-tech-mono": "5.3.0",
+    "@tabler/core": "^1.5.1",
+    "@tauri-apps/api": "^2.10.0",
+    "lucide": "^1.47.0",
+    "lucide-react": "^1.47.0",
+    "react": "^19.2.8",
+    "react-dom": "^19.2.8"
+  },
+  "devDependencies": {
+    "@tauri-apps/cli": "^2.10.0",
+    "@types/react": "^19.2.18",
+    "@types/react-dom": "^19.2.7",
+    "@vitejs/plugin-react": "^4.7.0",
+    "typescript": "^5.9.3",
+    "vite": "^7.3.1"
+  }
+}

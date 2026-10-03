@@ -1,0 +1,251 @@
+/* Mapping HUD Overlay styles — exact Daytripper canvas node card in desktop overlay */
+
+.wh-mapping-overlay-shell {
+  padding: 6px;
+  background: transparent;
+  display: inline-block;
+  user-select: none;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+  color: var(--wok-text-primary, #f1f5f9);
+}
+
+.wh-mapping-overlay-shell .wh-canvas-node.wh-overlay-card {
+  position: relative !important;
+  top: auto !important;
+  left: auto !important;
+  width: 360px;
+  min-width: 340px;
+  max-width: 420px;
+  margin: 0;
+  cursor: default;
+  background: #1e293bd9;
+  -webkit-backdrop-filter: var(--wok-glass-blur, blur(16px));
+  backdrop-filter: var(--wok-glass-blur, blur(16px));
+  border: 1px solid var(--wok-accent, #38bdf8);
+  border-radius: 8px;
+  box-shadow: 0 0 18px var(--wok-accent-a45, rgba(56, 189, 248, 0.45)), 0 8px 24px rgba(0, 0, 0, 0.6);
+  pointer-events: auto;
+}
+
+/* Draggable header */
+.wh-mapping-overlay-shell .wh-node-header {
+  cursor: grab;
+  user-select: none;
+}
+
+.wh-mapping-overlay-shell .wh-node-header:active {
+  cursor: grabbing;
+}
+
+.wh-mapping-overlay-shell .wh-node-header-left {
+  cursor: grab;
+}
+
+/* Switch hint next to scout name */
+.wh-pilot-switch-hint {
+  font-size: 9px;
+  padding: 1px 5px;
+  border-radius: 3px;
+  background: rgba(255, 255, 255, 0.08);
+  color: var(--wok-text-muted, #94a3b8);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  transition: all 0.15s ease;
+}
+
+.wh-node-scout-row:hover .wh-pilot-switch-hint {
+  background: var(--wok-accent-a20, rgba(56, 189, 248, 0.2));
+  color: var(--wok-accent, #38bdf8);
+  border-color: var(--wok-accent, #38bdf8);
+}
+
+/* Pilot Picker Dropdown */
+.wh-pilot-picker-dropdown {
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+  background: var(--wok-bg-canvas, #090d16);
+  border: 1px solid var(--wok-border-accent, rgba(56, 189, 248, 0.4));
+  border-radius: 6px;
+  padding: 4px;
+  margin: 4px 0;
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.8);
+}
+
+.wh-pilot-picker-item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 4px 8px;
+  background: transparent;
+  border: 1px solid transparent;
+  border-radius: 4px;
+  color: var(--wok-text-primary, #f1f5f9);
+  font-size: 11px;
+  cursor: pointer;
+  transition: all 0.12s ease;
+}
+
+.wh-pilot-picker-item:hover {
+  background: rgba(255, 255, 255, 0.06);
+  border-color: rgba(255, 255, 255, 0.15);
+}
+
+.wh-pilot-picker-item.active {
+  background: var(--wok-accent-a15, rgba(56, 189, 248, 0.15));
+  border-color: var(--wok-accent, #38bdf8);
+  color: var(--wok-accent, #38bdf8);
+  font-weight: 700;
+}
+
+.wh-pilot-role-chip {
+  font-size: 9px;
+  padding: 1px 4px;
+  border-radius: 3px;
+  background: rgba(16, 185, 129, 0.2);
+  border: 1px solid rgba(16, 185, 129, 0.4);
+  color: #34d399;
+}
+
+.wh-pilot-role-chip.main {
+  background: rgba(148, 163, 184, 0.15);
+  border-color: rgba(148, 163, 184, 0.3);
+  color: #94a3b8;
+}
+
+/* Latest Bookmark Remote-Control Banner */
+.wh-overlay-bm-banner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 6px;
+  background: rgba(16, 185, 129, 0.15);
+  border-bottom: 1px solid rgba(16, 185, 129, 0.35);
+  padding: 5px 8px;
+  font-size: 11px;
+}
+
+.wh-overlay-bm-left {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  cursor: pointer;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  flex: 1;
+}
+
+.wh-overlay-bm-left:hover {
+  filter: brightness(1.15);
+}
+
+.wh-overlay-bm-icon {
+  color: var(--wok-success, #10b981);
+  flex-shrink: 0;
+}
+
+.wh-overlay-bm-code {
+  font-family: var(--wok-font-mono, ui-monospace, SFMono-Regular, monospace);
+  font-weight: 700;
+  color: #ecfdf5;
+  letter-spacing: 0.02em;
+}
+
+.wh-overlay-bm-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 3px;
+  font-size: 9px;
+  padding: 1px 4px;
+  border-radius: 3px;
+  background: rgba(16, 185, 129, 0.25);
+  color: #34d399;
+  border: 1px solid rgba(16, 185, 129, 0.4);
+}
+
+.wh-overlay-reset-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  background: rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  border-radius: 4px;
+  color: var(--wok-text-muted, #94a3b8);
+  font-size: 10px;
+  padding: 2px 6px;
+  cursor: pointer;
+  transition: all 0.15s ease;
+  flex-shrink: 0;
+}
+
+.wh-overlay-reset-btn:hover {
+  background: var(--wok-accent-a20, rgba(56, 189, 248, 0.2));
+  border-color: var(--wok-accent, #38bdf8);
+  color: var(--wok-accent, #38bdf8);
+}
+
+.wh-overlay-reset-btn:focus-visible {
+  outline: 2px solid var(--wok-accent, #38bdf8);
+  outline-offset: 1px;
+}
+
+
+/* Floating Daytripper card only; chain canvas presentation is unchanged. */
+.wh-mapping-overlay-shell {
+  --wok-mapping-surface: var(--wok-hud-surface);
+  --wok-mapping-border: color-mix(in srgb, var(--wok-text-primary) 24%, var(--wok-mapping-surface));
+  --wok-mapping-divider: color-mix(in srgb, var(--wok-text-primary) 16%, var(--wok-mapping-surface));
+  padding: 4px;
+  font-family: "Arial Narrow", "Segoe UI", sans-serif;
+  color: var(--wok-text-primary);
+}
+@supports (background: hsl(from white h 0% l)) {
+  .wh-mapping-overlay-shell { --wok-mapping-surface: hsl(from var(--wok-hud-surface) h 0% l); }
+}
+.wh-mapping-overlay-shell .wh-canvas-node.wh-overlay-card {
+  width: calc(360px * var(--font-scale, 1));
+  min-width: 0;
+  max-width: none;
+  background: color-mix(in srgb, var(--wok-mapping-surface) 88%, transparent);
+  border: 1px solid var(--wok-mapping-border);
+  border-radius: 0;
+  box-shadow: none;
+  backdrop-filter: blur(6px);
+  -webkit-backdrop-filter: blur(6px);
+}
+.wh-mapping-overlay-shell .wh-node-header { padding: 6px; background: transparent; border-bottom: 1px solid var(--wok-mapping-divider); }
+.wh-mapping-overlay-shell .wh-node-body { padding: 6px; }
+.wh-mapping-overlay-shell .wh-node-title { font-weight: 400; font-size: calc(0.8125rem * var(--font-scale, 1)); }
+.wh-mapping-overlay-shell :is(.wh-static-pill, .wh-class-badge, .wh-card-sec-badge, .wh-pilot-switch-hint, .wh-overlay-reset-btn) { border-radius: 0; box-shadow: none; }
+.wh-mapping-overlay-shell :is(.wh-node-scout-row, .wh-node-statics-row) { font-weight: 400; font-size: calc(0.6875rem * var(--font-scale, 1)); }
+.wh-mapping-overlay-shell :is(button, [role="button"], input, select):focus-visible { outline: 2px solid var(--wok-accent); outline-offset: 2px; }
+
+.wh-mapping-overlay-shell .wh-canvas-node.wh-overlay-card:not(.is-transparent):not(.is-pinned) {
+  background: color-mix(in srgb, var(--wok-mapping-surface) 70%, transparent);
+}
+html[data-wok-overlay-focused="1"] .wh-mapping-overlay-shell .wh-canvas-node.wh-overlay-card:not(.is-transparent):not(.is-pinned) {
+  background: color-mix(in srgb, var(--wok-mapping-surface) 88%, transparent);
+  border-color: var(--wok-mapping-border);
+  border-top-color: color-mix(in srgb, var(--wok-accent) 42%, var(--wok-mapping-border));
+  box-shadow: none;
+}
+html[data-wok-overlay-focused="1"] .wh-mapping-overlay-shell .wh-canvas-node.wh-overlay-card:not(.is-transparent):not(.is-pinned)::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 4px;
+  right: 4px;
+  height: 1px;
+  background: color-mix(in srgb, var(--wok-accent) 42%, var(--wok-mapping-border));
+  box-shadow: 0 -2px 5px color-mix(in srgb, var(--wok-accent) 15%, transparent);
+  pointer-events: none;
+}
+
+.wh-mapping-overlay-shell .wh-pilot-picker-dropdown {
+  background: color-mix(in srgb, var(--wok-mapping-surface) 88%, transparent);
+  border: 1px solid var(--wok-mapping-border);
+  border-radius: 0;
+  box-shadow: none;
+  padding: 3px;
+}
+.wh-mapping-overlay-shell .wh-pilot-picker-item { padding: 3px 6px; font-family: inherit; font-weight: 400; border-radius: 0; color: var(--wok-text-primary); }

@@ -1,0 +1,323 @@
+:root {
+  /* ==========================================================================
+     WOK Unified Design System Tokens
+     Shared across WOKAuth (Web) & WOK Companion (Desktop)
+     ========================================================================== */
+
+  /* Canvas & Base Surfaces */
+  --wok-bg-canvas: #080d14;
+  --wok-bg-surface: #0e1622;
+  --wok-bg-elevated: #141f2d;
+  --wok-bg-hover: #1b293b;
+  --wok-bg-active: #22354c;
+
+  /* Borders & Dividers */
+  --wok-border-subtle: rgba(255, 255, 255, 0.07);
+  --wok-border-default: #223548;
+  --wok-border-strong: #334a62;
+  --wok-border-accent: rgba(0, 240, 255, 0.5);
+
+  /* Typography */
+  --wok-text-primary: #f0f4f8;
+  --wok-text-secondary: #94a3b8;
+  --wok-text-muted: #62758a;
+  --wok-text-dim: #455566;
+
+  /* Brand & Tactical Accent — default matches Tournament until data-theme applies.
+     --wok-accent-strong / --wok-info always track the active accent. */
+  --wok-accent: #00f0ff;
+  --wok-accent-hover: #5df7ff;
+  --wok-accent-strong: var(--wok-accent);
+  --wok-accent-subtle: color-mix(in srgb, var(--wok-accent) 12%, transparent);
+  --wok-accent-glow: 0 0 12px color-mix(in srgb, var(--wok-accent) 45%, transparent);
+  /* Alpha mixes for module CSS (follow active theme accent) */
+  --wok-accent-a05: color-mix(in srgb, var(--wok-accent) 5%, transparent);
+  --wok-accent-a08: color-mix(in srgb, var(--wok-accent) 8%, transparent);
+  --wok-accent-a10: color-mix(in srgb, var(--wok-accent) 10%, transparent);
+  --wok-accent-a12: color-mix(in srgb, var(--wok-accent) 12%, transparent);
+  --wok-accent-a15: color-mix(in srgb, var(--wok-accent) 15%, transparent);
+  --wok-accent-a18: color-mix(in srgb, var(--wok-accent) 18%, transparent);
+  --wok-accent-a20: color-mix(in srgb, var(--wok-accent) 20%, transparent);
+  --wok-accent-a25: color-mix(in srgb, var(--wok-accent) 25%, transparent);
+  --wok-accent-a30: color-mix(in srgb, var(--wok-accent) 30%, transparent);
+  --wok-accent-a35: color-mix(in srgb, var(--wok-accent) 35%, transparent);
+  --wok-accent-a40: color-mix(in srgb, var(--wok-accent) 40%, transparent);
+  --wok-accent-a45: color-mix(in srgb, var(--wok-accent) 45%, transparent);
+  --wok-accent-a50: color-mix(in srgb, var(--wok-accent) 50%, transparent);
+  --wok-accent-a60: color-mix(in srgb, var(--wok-accent) 60%, transparent);
+  --wok-accent-a70: color-mix(in srgb, var(--wok-accent) 70%, transparent);
+  --wok-accent-a80: color-mix(in srgb, var(--wok-accent) 80%, transparent);
+
+  /* Semantic Status */
+  --wok-success: #34d399;
+  --wok-success-subtle: rgba(52, 211, 153, 0.14);
+  --wok-warning: #ffb703;
+  --wok-warning-subtle: rgba(255, 183, 3, 0.15);
+  --wok-danger: #f87171;
+  --wok-danger-subtle: rgba(248, 113, 113, 0.14);
+  --wok-info: var(--wok-accent);
+  --wok-info-subtle: var(--wok-accent-subtle);
+  --wok-purple: #c084fc;
+
+  /* Radii & Shadows */
+  --wok-radius: 4px;
+  --wok-radius-sm: 3px;
+  --wok-radius-md: 6px;
+  --wok-radius-lg: 10px;
+  --wok-card-radius: var(--wok-radius-md);
+  --wok-shadow-sm: 0 2px 6px rgba(0, 0, 0, 0.25);
+  --wok-shadow: 0 4px 14px rgba(0, 0, 0, 0.35);
+  --wok-shadow-lg: 0 8px 24px rgba(0, 0, 0, 0.5);
+  /* Shared tactical overlay chrome; all hues follow the selected theme. */
+  --wok-hud-surface: var(--wok-bg-surface);
+  --wok-hud-border: color-mix(in srgb, var(--wok-text-primary) 48%, var(--wok-bg-surface));
+  --wok-hud-radius: var(--wok-radius-sm);
+  --wok-hud-font: "Chakra Petch", "Segoe UI", sans-serif;
+  --wok-hud-mono: "IBM Plex Mono", Consolas, monospace;
+
+  /* Spacing (shell + hosted modules) */
+  --wok-space-1: 4px;
+  --wok-space-2: 8px;
+  --wok-space-3: 12px;
+  --wok-space-4: 16px;
+  --wok-space-5: 20px;
+  --wok-duration-hover: 120ms;
+  --wok-ease: cubic-bezier(0.22, 1, 0.36, 1);
+
+  /* Text on accent fills (nav pills, primary chips) */
+  --wok-on-accent: var(--wok-bg-canvas);
+
+  /* Glassmorphic Surfaces — obsidian glass (shell + panels)
+     Recipe aligned to WOKAuth floating shell: smoked panels, heavy blur,
+     thin light edges, modular gaps so atmosphere shows through. */
+  --wok-glass-bg: color-mix(in srgb, var(--wok-bg-surface) 44%, transparent);
+  --wok-glass-border: color-mix(in srgb, var(--wok-text-primary) 12%, transparent);
+  --wok-glass-backdrop: blur(24px) saturate(1.15);
+  --wok-glass-surface: color-mix(in srgb, var(--wok-bg-surface) 38%, transparent);
+  --wok-glass-shell: color-mix(in srgb, var(--wok-bg-surface) 42%, transparent);
+  --wok-glass-dialog: color-mix(in srgb, var(--wok-bg-elevated) 58%, transparent);
+  --wok-glass-blur: var(--wok-glass-backdrop);
+  --wok-glass-radius: var(--wok-radius-md);
+  --wok-glass-edge: color-mix(in srgb, var(--wok-text-primary) 14%, transparent);
+  --wok-glass-highlight: color-mix(in srgb, var(--wok-text-primary) 22%, transparent);
+  --wok-glass-overlay: color-mix(in srgb, var(--wok-bg-canvas) 48%, transparent);
+  --wok-glass-gap: 10px;
+  --wok-glass-shadow:
+    inset 0 1px 0 var(--wok-glass-highlight),
+    0 8px 28px color-mix(in srgb, var(--wok-bg-canvas) 55%, transparent);
+
+  /* Backward Compatibility Aliases */
+  --wok-bg-0: var(--wok-bg-canvas);
+  --wok-bg-1: var(--wok-bg-surface);
+  --wok-bg-2: var(--wok-bg-elevated);
+  --wok-surface: var(--wok-bg-elevated);
+  --wok-surface-hover: var(--wok-bg-hover);
+  --wok-surface-selected: var(--wok-bg-active);
+  --wok-border: var(--wok-border-default);
+  --wok-text: var(--wok-text-primary);
+
+  /* Standard Web Aliases */
+  --bg: var(--wok-bg-canvas);
+  --panel: var(--wok-bg-elevated);
+  --panel-alt: var(--wok-bg-surface);
+  --text: var(--wok-text-primary);
+  --muted: var(--wok-text-secondary);
+  --accent: var(--wok-accent);
+  --accent-2: var(--wok-accent-hover);
+  --line: var(--wok-border-default);
+  --warning: var(--wok-warning);
+  --danger: var(--wok-danger);
+
+  /* Desktop density (default) */
+  --control-height: 26px;
+  --row-height: 24px;
+  --space-unit: 4px;
+  --font-size-base: 11px;
+  --font-size-small: 10px;
+  --font-size-header: 12px;
+
+  font-family: Inter, "Segoe UI", system-ui, -apple-system, sans-serif;
+  color: var(--wok-text-primary);
+  color-scheme: dark;
+}
+
+[data-density="desktop"] {
+  --control-height: 26px;
+  --row-height: 24px;
+  --space-unit: 4px;
+  --font-size-base: 11px;
+  --font-size-small: 10px;
+  --font-size-header: 12px;
+}
+
+[data-density="web"] {
+  --control-height: 34px;
+  --row-height: 34px;
+  --space-unit: 6px;
+  --font-size-base: 13px;
+  --font-size-small: 11px;
+  --font-size-header: 14px;
+}
+
+/* ==========================================================================
+   Font Size Scaling Tokens
+   ========================================================================== */
+:root {
+  --font-scale: 1;
+}
+
+[data-font-size="small"] {
+  --font-scale: 0.88;
+  --font-size-base: 10px;
+  --font-size-small: 9px;
+  --font-size-header: 11px;
+}
+
+[data-font-size="normal"] {
+  --font-scale: 1;
+  --font-size-base: 11px;
+  --font-size-small: 10px;
+  --font-size-header: 12px;
+}
+
+[data-font-size="large"] {
+  --font-scale: 1.15;
+  --font-size-base: 13px;
+  --font-size-small: 11.5px;
+  --font-size-header: 14px;
+}
+
+[data-font-size="xlarge"] {
+  --font-scale: 1.3;
+  --font-size-base: 15px;
+  --font-size-small: 13px;
+}
+
+
+/* Scrollbar styling */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--wok-bg-surface);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--wok-border-default);
+  border-radius: var(--wok-radius-sm);
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--wok-border-strong);
+}
+
+/* ==========================================================================
+   Multi-Theme Engine Tokens
+   Selectors use html[data-theme] (specificity 0,1,1) so theme palettes beat
+   any later bare :root { --wok-accent: #… } dumps from bundled module CSS.
+   ========================================================================== */
+
+html[data-theme="tournament"],
+:root:not([data-theme]) {
+  --wok-bg-canvas: #05080c;
+  --wok-bg-surface: #0a1017;
+  --wok-bg-elevated: #0f1822;
+  --wok-bg-hover: #142130;
+  --wok-bg-active: #1b2d42;
+  --wok-border-default: #1a2938;
+  --wok-border-strong: #253b52;
+  --wok-border-accent: rgba(0, 240, 255, 0.5);
+  --wok-accent: #00f0ff;
+  --wok-accent-hover: #5df7ff;
+  --wok-accent-subtle: color-mix(in srgb, var(--wok-accent) 12%, transparent);
+  --wok-accent-glow: 0 0 12px color-mix(in srgb, var(--wok-accent) 45%, transparent);
+  --wok-warning: #ffb703;
+  --wok-warning-subtle: rgba(255, 183, 3, 0.15);
+  --wok-text-primary: #e2f1f8;
+  --wok-text-secondary: #90a8be;
+}
+
+html[data-theme="tournament"] body {
+  background-image:
+    linear-gradient(to right, rgba(0, 240, 255, 0.035) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(0, 240, 255, 0.035) 1px, transparent 1px);
+  background-size: 24px 24px;
+}
+
+html[data-theme="abyssal"] {
+  --wok-bg-canvas: #09090e;
+  --wok-bg-surface: #101018;
+  --wok-bg-elevated: #161622;
+  --wok-bg-hover: #1f1f30;
+  --wok-bg-active: #2a2a40;
+  --wok-border-default: #252236;
+  --wok-border-strong: #38344e;
+  --wok-border-accent: rgba(255, 51, 102, 0.5);
+  --wok-accent: #ff3366;
+  --wok-accent-hover: #ff6688;
+  --wok-accent-subtle: color-mix(in srgb, var(--wok-accent) 15%, transparent);
+  --wok-accent-glow: 0 0 12px color-mix(in srgb, var(--wok-accent) 40%, transparent);
+  --wok-warning: #ff8800;
+  --wok-warning-subtle: rgba(255, 136, 0, 0.15);
+  --wok-text-primary: #f5f5fa;
+  --wok-text-secondary: #9f9da8;
+}
+
+html[data-theme="amarr"] {
+  --wok-bg-canvas: #080705;
+  --wok-bg-surface: #12100a;
+  --wok-bg-elevated: #1a170f;
+  --wok-bg-hover: #262116;
+  --wok-bg-active: #362e1e;
+  --wok-border-default: #2e2617;
+  --wok-border-strong: #453a23;
+  --wok-border-accent: rgba(245, 158, 11, 0.5);
+  --wok-accent: #f59e0b;
+  --wok-accent-hover: #fbbf24;
+  --wok-accent-subtle: color-mix(in srgb, var(--wok-accent) 15%, transparent);
+  --wok-accent-glow: 0 0 12px color-mix(in srgb, var(--wok-accent) 40%, transparent);
+  --wok-warning: #fbbf24;
+  --wok-warning-subtle: rgba(251, 191, 36, 0.15);
+  --wok-text-primary: #fef3c7;
+  --wok-text-secondary: #bfa886;
+}
+
+html[data-theme="caldari"] {
+  --wok-bg-canvas: #060a10;
+  --wok-bg-surface: #0b1320;
+  --wok-bg-elevated: #111e30;
+  --wok-bg-hover: #182a44;
+  --wok-bg-active: #21395c;
+  --wok-border-default: #1b2f4a;
+  --wok-border-strong: #284770;
+  --wok-border-accent: rgba(56, 189, 248, 0.5);
+  --wok-accent: #38bdf8;
+  --wok-accent-hover: #7dd3fc;
+  --wok-accent-subtle: color-mix(in srgb, var(--wok-accent) 15%, transparent);
+  --wok-accent-glow: 0 0 12px color-mix(in srgb, var(--wok-accent) 40%, transparent);
+  --wok-warning: #38bdf8;
+  --wok-warning-subtle: rgba(56, 189, 248, 0.15);
+  --wok-text-primary: #e0f2fe;
+  --wok-text-secondary: #8ab0cc;
+}
+
+html[data-theme="matrix"] {
+  --wok-bg-canvas: #040d06;
+  --wok-bg-surface: #07170b;
+  --wok-bg-elevated: #0d2212;
+  --wok-bg-hover: #123019;
+  --wok-bg-active: #194424;
+  --wok-border-default: #15391d;
+  --wok-border-strong: #20562c;
+  --wok-border-accent: rgba(34, 197, 94, 0.5);
+  --wok-accent: #22c55e;
+  --wok-accent-hover: #4ade80;
+  --wok-accent-subtle: color-mix(in srgb, var(--wok-accent) 15%, transparent);
+  --wok-accent-glow: 0 0 12px color-mix(in srgb, var(--wok-accent) 40%, transparent);
+  --wok-warning: #86efac;
+  --wok-warning-subtle: rgba(134, 239, 172, 0.15);
+  --wok-text-primary: #dcfce7;
+  --wok-text-secondary: #86b093;
+}

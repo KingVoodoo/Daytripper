@@ -1,0 +1,178 @@
+/* Shared hosted-module chrome — Settings, Transfer, Clients subnav/buttons. */
+@import './glass.css';
+
+:root {
+  --wok-space-1: 4px;
+  --wok-space-2: 8px;
+  --wok-space-3: 12px;
+  --wok-space-4: 16px;
+  --wok-space-5: 20px;
+  --wok-card-radius: var(--wok-radius-md);
+  --wok-duration-hover: 120ms;
+  --wok-ease: cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.wok-subnav {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--wok-space-2);
+}
+
+.wok-subnav-btn,
+.nav-tab,
+.transfer-tabs .wok-tab-btn,
+.overlay-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--wok-space-2);
+  padding: 0.45rem 0.9rem;
+  border: 1px solid var(--wok-glass-edge);
+  border-radius: var(--wok-card-radius);
+  background: var(--wok-glass-surface);
+  box-shadow: var(--wok-glass-shadow);
+  -webkit-backdrop-filter: var(--wok-glass-blur);
+  backdrop-filter: var(--wok-glass-blur);
+  color: var(--wok-text-secondary);
+  font: inherit;
+  font-size: calc(12px * var(--font-scale, 1));
+  font-weight: 600;
+  letter-spacing: 0.02em;
+  cursor: pointer;
+  transition:
+    background var(--wok-duration-hover) var(--wok-ease),
+    border-color var(--wok-duration-hover) var(--wok-ease),
+    color var(--wok-duration-hover) var(--wok-ease);
+}
+
+.wok-subnav-btn:hover,
+.nav-tab:hover,
+.transfer-tabs .wok-tab-btn:hover,
+.overlay-pill:hover {
+  background: var(--wok-bg-hover);
+  border-color: var(--wok-accent);
+  color: var(--wok-text-primary);
+}
+
+.wok-subnav-btn.is-active,
+.wok-subnav-btn.active,
+.nav-tab.active,
+.transfer-tabs .wok-tab-btn.active,
+.overlay-pill.active {
+  background: var(--wok-accent-subtle);
+  border-color: var(--wok-border);
+  color: var(--wok-accent);
+  box-shadow: none;
+}
+
+.wok-subnav-btn:focus-visible,
+.nav-tab:focus-visible,
+.transfer-tabs .wok-tab-btn:focus-visible,
+.overlay-pill:focus-visible,
+.wok-btn:focus-visible,
+.btn-select-theme:focus-visible,
+.preset-pill:focus-visible {
+  outline: 3px solid var(--wok-accent);
+  outline-offset: 3px;
+}
+
+.wok-host-btn,
+.wok-btn {
+  height: var(--control-height);
+  padding: 0 10px;
+  font-size: var(--font-size-base);
+  font-weight: 500;
+  border-radius: var(--wok-radius);
+  background: var(--wok-glass-surface);
+  border: 1px solid var(--wok-glass-edge);
+  box-shadow: var(--wok-glass-shadow);
+  -webkit-backdrop-filter: var(--wok-glass-blur);
+  backdrop-filter: var(--wok-glass-blur);
+  color: var(--wok-text-primary);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  transition:
+    background var(--wok-duration-hover) var(--wok-ease),
+    border-color var(--wok-duration-hover) var(--wok-ease),
+    color var(--wok-duration-hover) var(--wok-ease);
+  white-space: nowrap;
+  cursor: pointer;
+}
+
+.wok-host-btn:hover,
+.wok-btn:hover {
+  background: var(--wok-accent-subtle);
+  border-color: var(--wok-accent);
+  color: var(--wok-accent-hover);
+}
+
+.wok-btn-accent {
+  background: var(--wok-accent);
+  border-color: var(--wok-accent);
+  color: var(--wok-on-accent);
+  box-shadow: none;
+}
+
+.wok-btn-accent:hover {
+  background: var(--wok-accent-hover);
+  border-color: var(--wok-accent-hover);
+  color: var(--wok-on-accent);
+  box-shadow: none;
+}
+
+.wok-btn-secondary {
+  background: transparent;
+  border-color: transparent;
+  color: var(--wok-text-muted);
+}
+
+.wok-btn-secondary:hover {
+  background: var(--wok-bg-hover);
+  color: var(--wok-text-primary);
+}
+
+.wok-btn-danger,
+.btn-danger {
+  background: var(--wok-danger-subtle);
+  border: 1px solid var(--wok-danger);
+  color: var(--wok-danger);
+}
+
+.wok-btn-danger:hover,
+.btn-danger:hover {
+  background: var(--wok-danger-subtle);
+  border-color: var(--wok-danger);
+  color: var(--wok-text-primary);
+}
+
+.wok-btn-warning,
+.btn-warning {
+  background: var(--wok-warning-subtle);
+  border: 1px solid var(--wok-warning);
+  color: var(--wok-warning);
+}
+
+.wok-btn-warning:hover,
+.btn-warning:hover {
+  background: var(--wok-warning-subtle);
+  border-color: var(--wok-warning);
+  color: var(--wok-text-primary);
+}
+
+/* UniWiki Neocom raster icons */
+.wok-uniwiki-icon {
+  display: inline-block;
+  width: 1.25em;
+  height: 1.25em;
+  object-fit: contain;
+  vertical-align: middle;
+  border-radius: 2px;
+  flex-shrink: 0;
+}
+
+.wok-nav-eve-icon.wok-uniwiki-icon,
+.wok-icon-wrap .wok-uniwiki-icon {
+  width: 24px;
+  height: 24px;
+}

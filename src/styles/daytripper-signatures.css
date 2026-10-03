@@ -1,0 +1,241 @@
+/* Keep signature actions visible in the narrow Daytripper inspector. */
+.wh-sig-section .wh-sig-grid-table,
+.wh-sig-section .wh-sig-grid-table tbody { display: block; width: 100%; }
+.wh-sig-section .wh-sig-grid-table thead { position: absolute; width: 1px; height: 1px; overflow: hidden; clip-path: inset(50%); }
+.wh-sig-section .wh-sig-grid-row { display: grid; grid-template-columns: auto 1fr auto; padding: 8px; gap: 4px; background: var(--wok-glass-surface); border-bottom: 1px solid var(--wok-glass-edge); }
+.wh-sig-section .wh-sig-grid-row td { padding: 2px; min-width: 0; width: auto; color: var(--wok-text-primary); }
+.wh-sig-section .wh-sig-col-id { grid-column: 1; grid-row: 1; white-space: nowrap; }
+.wh-sig-section .wh-sig-col-group { grid-column: 2; grid-row: 1; }
+.wh-sig-section .wh-sig-grid-row td:nth-child(4) { grid-column: 3; grid-row: 1; }
+.wh-sig-section .wh-sig-col-name { grid-column: 1 / -1; grid-row: 2; }
+.wh-sig-section .wh-sig-grid-row td:nth-child(5) { grid-column: 1 / -1; grid-row: 3; }
+.wh-sig-section .wh-sig-col-actions { grid-column: 1 / -1; grid-row: 4; flex-wrap: wrap; }
+.wh-sig-section .wh-sig-guide-link { color: var(--wok-accent); display: inline-block; margin-top: 4px; }
+.wh-sig-section .wh-sig-scan-status { color: var(--wok-text-secondary); }
+.wh-sig-section .wh-sig-btn { color: var(--wok-text-primary); background: var(--wok-glass-surface); border-color: var(--wok-border-strong); }
+.wh-sig-section .wh-sig-btn:hover { color: var(--wok-text-primary); background: var(--wok-bg-hover); border-color: var(--wok-accent); }
+.wh-sig-section :is(button,a):focus-visible { outline: 2px solid var(--wok-accent); outline-offset: 2px; }
+.wh-sig-section .wh-sig-filter-row { flex-wrap: wrap; }
+
+.wh-confirm-dialog { position: fixed; inset: 50% auto auto 50%; transform: translate(-50%, -50%); margin: 0; width: min(420px, calc(100vw - 32px)); max-height: calc(100vh - 32px); overflow: auto; padding: 20px; color: var(--wok-text-primary); background: var(--wok-glass-dialog); border: 1px solid var(--wok-border-strong); border-radius: var(--wok-radius-md); }
+.wh-confirm-dialog::backdrop { background: var(--wok-glass-bg); }
+.wh-confirm-dialog button:focus-visible, [data-map-system-id]:focus-visible { outline: 2px solid var(--wok-accent); outline-offset: 2px; }
+
+/* Floating Wormhole Signature Tags on Canvas System Nodes */
+.wh-floating-sigs-container {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 4px;
+  margin-top: 6px;
+  padding-top: 6px;
+  border-top: 1px dashed var(--wok-glass-edge, var(--wok-border-default));
+}
+
+.wh-floating-sigs-label {
+  font-size: 10px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  color: var(--wok-text-secondary);
+  width: 100%;
+  margin-bottom: 2px;
+}
+
+.wh-floating-sig-tag {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  padding: 2px 7px;
+  border-radius: var(--wok-radius-sm, 4px);
+  background: var(--wok-glass-surface, var(--wok-bg-surface));
+  border: 1px solid var(--wok-border-strong, var(--wok-border-default));
+  color: var(--wok-text-primary);
+  font-size: 11px;
+  font-family: inherit;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.15s ease;
+}
+
+.wh-floating-sig-tag:hover {
+  background: var(--wok-bg-hover);
+  border-color: var(--wok-accent);
+  color: var(--wok-text-primary);
+}
+
+.wh-floating-sig-tag.targeted {
+  background: var(--wok-accent-subtle, rgba(56, 189, 248, 0.15));
+  border-color: var(--wok-accent);
+  color: var(--wok-accent);
+  font-weight: 600;
+  box-shadow: 0 0 8px color-mix(in srgb, var(--wok-accent) 40%, transparent);
+}
+
+.wh-floating-sig-tag.linked {
+  opacity: 0.75;
+  border-style: dashed;
+}
+
+.wh-floating-sig-tag.wh-floating-sig-unknown {
+  opacity: 0.85;
+  border-style: dotted;
+}
+
+.wh-sig-mini-name {
+  color: var(--wok-text-secondary);
+  font-size: 10px;
+}
+
+/* Pre-Jump Connection Lock Toolbar */
+.wh-prejump-bar {
+  margin-top: 8px;
+  padding: 8px;
+  border-radius: var(--wok-radius-sm, 4px);
+  background: var(--wok-bg-surface, var(--wok-glass-surface));
+  border: 1px solid var(--wok-accent);
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  font-size: 11px;
+}
+
+.wh-prejump-title {
+  font-weight: 600;
+  font-size: 11px;
+  color: var(--wok-accent);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.wh-prejump-chips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 4px;
+}
+
+.wh-prejump-chip {
+  padding: 2px 6px;
+  border-radius: var(--wok-radius-sm, 4px);
+  border: 1px solid var(--wok-border-default);
+  background: var(--wok-bg-elevated, var(--wok-glass-surface));
+  color: var(--wok-text-secondary);
+  font-size: 10px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.15s ease;
+}
+
+.wh-prejump-chip:hover {
+  color: var(--wok-text-primary);
+  border-color: var(--wok-accent);
+}
+
+.wh-prejump-chip.active {
+  background: var(--wok-accent);
+  color: var(--wok-bg-canvas);
+  border-color: var(--wok-accent);
+  font-weight: 700;
+}
+
+.wh-prejump-preview {
+  font-family: monospace;
+  font-size: 10.5px;
+  background: var(--wok-bg-canvas);
+  padding: 4px 6px;
+  border-radius: 3px;
+  border: 1px solid var(--wok-border-subtle);
+  color: var(--wok-accent);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  word-break: break-all;
+}
+
+.wh-prejump-code-input-wrapper {
+  display: inline-flex;
+  align-items: center;
+}
+
+.wh-prejump-code-input {
+  width: 160px;
+  height: 22px;
+  font-size: 10px;
+  padding: 1px 6px;
+  border-radius: var(--wok-radius-sm, 4px);
+  background: var(--wok-bg-elevated);
+  border: 1px solid var(--wok-border-default);
+  color: var(--wok-text-primary);
+}
+
+.wh-prejump-code-input:focus {
+  outline: 2px solid var(--wok-accent);
+  outline-offset: 1px;
+}
+
+.wh-prejump-spec-badge {
+  font-size: 10px;
+  padding: 2px 6px;
+  border-radius: var(--wok-radius-sm, 4px);
+  background: var(--wok-bg-subtle);
+  color: var(--wok-accent);
+  border: 1px solid var(--wok-border-subtle);
+  display: inline-flex;
+  align-items: center;
+  font-weight: 500;
+}
+
+.wh-roll-k162-notice {
+  margin: 6px 0;
+  padding: 8px 10px;
+  border-radius: var(--wok-radius-sm, 4px);
+  background: var(--wok-bg-surface);
+  border: 1px dashed var(--wok-accent);
+  font-size: 11px;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+/* Header Bookmark Confirmation Button */
+.daytripper-header-bm-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  background: var(--wok-success-subtle) !important;
+  color: var(--wok-success) !important;
+  border: 1px solid var(--wok-success) !important;
+  font-family: inherit;
+  font-weight: 600;
+  padding: 4px 10px;
+  max-width: 440px;
+}
+
+.daytripper-header-bm-btn:hover {
+  background: color-mix(in srgb, var(--wok-success) 25%, transparent) !important;
+  box-shadow: 0 0 10px color-mix(in srgb, var(--wok-success) 35%, transparent);
+}
+
+.daytripper-header-bm-btn .bm-code {
+  font-family: monospace;
+  font-size: 11px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  letter-spacing: 0.2px;
+}
+
+.daytripper-header-bm-btn .bm-copied-tag {
+  display: inline-flex;
+  align-items: center;
+  gap: 3px;
+  font-size: 10px;
+  text-transform: uppercase;
+  padding: 1px 5px;
+  border-radius: 3px;
+  background: var(--wok-success);
+  color: var(--wok-bg-canvas);
+  font-weight: 700;
+}
+

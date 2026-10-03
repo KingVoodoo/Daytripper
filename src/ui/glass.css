@@ -1,0 +1,164 @@
+/* Obsidian glass utilities — shared by Companion shell and hosted modules.
+   Pattern matches WOKAuth floating shell: smoked panels, blur, thin edges. */
+
+.wok-glass,
+.wok-glass-panel {
+  background: var(--wok-glass-surface);
+  border: 1px solid var(--wok-glass-edge);
+  border-radius: var(--wok-glass-radius);
+  box-shadow: var(--wok-glass-shadow);
+  -webkit-backdrop-filter: var(--wok-glass-blur);
+  backdrop-filter: var(--wok-glass-blur);
+}
+
+.wok-glass-shell {
+  background: var(--wok-glass-shell);
+  border: 1px solid var(--wok-glass-edge);
+  border-radius: var(--wok-glass-radius);
+  box-shadow: var(--wok-glass-shadow);
+  -webkit-backdrop-filter: var(--wok-glass-blur);
+  backdrop-filter: var(--wok-glass-blur);
+}
+
+.wok-glass-dialog {
+  background: var(--wok-glass-dialog);
+  border: 1px solid var(--wok-glass-edge);
+  border-radius: var(--wok-glass-radius);
+  box-shadow: var(--wok-glass-shadow);
+  -webkit-backdrop-filter: var(--wok-glass-blur);
+  backdrop-filter: var(--wok-glass-blur);
+}
+
+.wok-glass-overlay {
+  background: var(--wok-glass-overlay);
+  -webkit-backdrop-filter: var(--wok-glass-blur);
+  backdrop-filter: var(--wok-glass-blur);
+}
+
+/* Hosted Tabler / Bootstrap surfaces inside the Companion workspace */
+html[data-wok-shell='1'] .card,
+html[data-wok-shell='1'] .accordion,
+html[data-wok-shell='1'] .accordion-item,
+html[data-wok-shell='1'] .list-group,
+html[data-wok-shell='1'] .modal-content,
+html[data-wok-shell='1'] .dropdown-menu,
+html[data-wok-shell='1'] .toast,
+html[data-wok-shell='1'] .offcanvas,
+html[data-wok-shell='1'] .popover,
+html[data-wok-shell='1'] .page-header,
+html[data-wok-shell='1'] .navbar:not(.wok-sidebar):not(.wok-topbar) {
+  --tblr-card-bg: var(--wok-glass-surface);
+  --tblr-bg-surface: var(--wok-glass-surface);
+  --tblr-modal-bg: var(--wok-glass-dialog);
+  background: var(--wok-glass-surface);
+  border-color: var(--wok-glass-edge);
+  box-shadow: var(--wok-glass-shadow);
+  -webkit-backdrop-filter: var(--wok-glass-blur);
+  backdrop-filter: var(--wok-glass-blur);
+}
+
+html[data-wok-shell='1'] .modal-content {
+  background: var(--wok-glass-dialog);
+}
+
+html[data-wok-shell='1'] .card-header,
+html[data-wok-shell='1'] .card-footer,
+html[data-wok-shell='1'] .accordion-button,
+html[data-wok-shell='1'] .list-group-item,
+html[data-wok-shell='1'] .modal-header,
+html[data-wok-shell='1'] .modal-footer {
+  background: transparent;
+  border-color: var(--wok-glass-edge);
+  color: var(--wok-text-primary);
+}
+
+html[data-wok-shell='1'] .accordion-button:not(.collapsed) {
+  background: var(--wok-accent-subtle);
+  color: var(--wok-accent);
+  box-shadow: none;
+}
+
+html[data-wok-shell='1'] .form-control,
+html[data-wok-shell='1'] .form-select,
+html[data-wok-shell='1'] .input-group-text {
+  background: var(--wok-glass-dialog);
+  border-color: var(--wok-glass-edge);
+  color: var(--wok-text-primary);
+  box-shadow: inset 0 1px 0 var(--wok-glass-highlight);
+}
+
+html[data-wok-shell='1'] .form-control:focus,
+html[data-wok-shell='1'] .form-select:focus {
+  background: var(--wok-glass-dialog);
+  border-color: var(--wok-accent);
+  color: var(--wok-text-primary);
+  box-shadow: none;
+  outline: 3px solid var(--wok-accent);
+  outline-offset: 3px;
+}
+
+html[data-wok-shell='1'] .table,
+html[data-wok-shell='1'] .table > :not(caption) > * > * {
+  --tblr-table-bg: transparent;
+  --tblr-table-color: var(--wok-text-primary);
+  --tblr-table-border-color: var(--wok-glass-edge);
+  background: transparent;
+  border-color: var(--wok-glass-edge);
+  color: var(--wok-text-primary);
+}
+
+html[data-wok-shell='1'] .table thead th {
+  background: color-mix(in srgb, var(--wok-bg-elevated) 45%, transparent);
+  color: var(--wok-text-secondary);
+  border-color: var(--wok-glass-edge);
+}
+
+html[data-wok-shell='1'] .btn:not(.btn-primary):not(.btn-success):not(.btn-danger):not(.btn-warning):not(.btn-info) {
+  background: var(--wok-glass-surface);
+  border-color: var(--wok-glass-edge);
+  color: var(--wok-text-primary);
+  box-shadow: var(--wok-glass-shadow);
+  -webkit-backdrop-filter: var(--wok-glass-blur);
+  backdrop-filter: var(--wok-glass-blur);
+}
+
+html[data-wok-shell='1'] .btn-primary {
+  background: var(--wok-accent);
+  border-color: var(--wok-accent);
+  color: var(--wok-on-accent);
+}
+
+html[data-wok-shell='1'] .btn-primary:hover {
+  background: var(--wok-accent-hover);
+  border-color: var(--wok-accent-hover);
+  color: var(--wok-on-accent);
+}
+
+html[data-wok-shell='1'] .nav-tabs .nav-link.active,
+html[data-wok-shell='1'] .nav-pills .nav-link.active {
+  background: var(--wok-accent-subtle);
+  border-color: var(--wok-border);
+  color: var(--wok-accent);
+}
+
+@supports not ((backdrop-filter: blur(1px)) or (-webkit-backdrop-filter: blur(1px))) {
+  :root {
+    --wok-glass-bg: var(--wok-bg-surface);
+    --wok-glass-surface: var(--wok-bg-surface);
+    --wok-glass-shell: var(--wok-bg-surface);
+    --wok-glass-dialog: var(--wok-bg-elevated);
+  }
+}
+
+@media (prefers-reduced-transparency: reduce) {
+  :root {
+    --wok-glass-bg: var(--wok-bg-surface);
+    --wok-glass-surface: var(--wok-bg-surface);
+    --wok-glass-shell: var(--wok-bg-surface);
+    --wok-glass-dialog: var(--wok-bg-elevated);
+    --wok-glass-blur: none;
+    --wok-glass-backdrop: none;
+    --wok-glass-shadow: var(--wok-shadow);
+    --wok-glass-overlay: color-mix(in srgb, var(--wok-bg-canvas) 78%, transparent);
+  }
+}
